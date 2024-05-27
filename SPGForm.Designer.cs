@@ -1,4 +1,4 @@
-﻿namespace StoreProcedureGenerator
+namespace StoreProcedureGenerator
 {
     partial class FrmStoreProcedureGenerator
     {
@@ -36,21 +36,29 @@
             txtPassword = new TextBox();
             label3 = new Label();
             panel1 = new Panel();
-            chkCheckAll = new CheckBox();
-            chkCreateInsertSP = new CheckBox();
-            chkCreateUpdateSP = new CheckBox();
+            panel2 = new Panel();
+            btnSelectAllCheckboxes = new Button();
+            chkCreateModels = new CheckBox();
+            chkCreateSelectSP = new CheckBox();
+            chkCreateDALs = new CheckBox();
             chkCreateDeleteSP = new CheckBox();
+            chkCreateServices = new CheckBox();
+            chkCreateUpdateSP = new CheckBox();
+            chkCreateInsertSP = new CheckBox();
+            chkCreateControllers = new CheckBox();
+            chkCheckAll = new CheckBox();
             btnGeneratorSPs = new Button();
             chkboxTableList = new CheckedListBox();
             label5 = new Label();
-            chkCreateSelectSP = new CheckBox();
             txtSelectedPath = new TextBox();
             btnSelectFolder = new Button();
             slctFolderDailog = new FolderBrowserDialog();
             cmbDatabases = new ComboBox();
             label4 = new Label();
             btnConnect = new Button();
+            chkCreateProgramFile = new CheckBox();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // btnFetchDBTables
@@ -121,20 +129,133 @@
             // panel1
             // 
             panel1.AutoScroll = true;
+            panel1.Controls.Add(panel2);
             panel1.Controls.Add(chkCheckAll);
-            panel1.Controls.Add(chkCreateInsertSP);
-            panel1.Controls.Add(chkCreateUpdateSP);
-            panel1.Controls.Add(chkCreateDeleteSP);
             panel1.Controls.Add(btnGeneratorSPs);
             panel1.Controls.Add(chkboxTableList);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(chkCreateSelectSP);
             panel1.Controls.Add(txtSelectedPath);
             panel1.Controls.Add(btnSelectFolder);
             panel1.Location = new Point(13, 126);
             panel1.Name = "panel1";
             panel1.Size = new Size(1215, 417);
             panel1.TabIndex = 7;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(chkCreateProgramFile);
+            panel2.Controls.Add(btnSelectAllCheckboxes);
+            panel2.Controls.Add(chkCreateModels);
+            panel2.Controls.Add(chkCreateSelectSP);
+            panel2.Controls.Add(chkCreateDALs);
+            panel2.Controls.Add(chkCreateDeleteSP);
+            panel2.Controls.Add(chkCreateServices);
+            panel2.Controls.Add(chkCreateUpdateSP);
+            panel2.Controls.Add(chkCreateInsertSP);
+            panel2.Controls.Add(chkCreateControllers);
+            panel2.Location = new Point(635, 100);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(580, 203);
+            panel2.TabIndex = 25;
+            // 
+            // btnSelectAllCheckboxes
+            // 
+            btnSelectAllCheckboxes.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSelectAllCheckboxes.Location = new Point(385, 158);
+            btnSelectAllCheckboxes.Name = "btnSelectAllCheckboxes";
+            btnSelectAllCheckboxes.Size = new Size(186, 29);
+            btnSelectAllCheckboxes.TabIndex = 26;
+            btnSelectAllCheckboxes.Text = "Select All";
+            btnSelectAllCheckboxes.UseVisualStyleBackColor = true;
+            btnSelectAllCheckboxes.Click += btnSelectAllCheckboxes_Click;
+            // 
+            // chkCreateModels
+            // 
+            chkCreateModels.AutoSize = true;
+            chkCreateModels.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            chkCreateModels.Location = new Point(179, 103);
+            chkCreateModels.Name = "chkCreateModels";
+            chkCreateModels.Size = new Size(129, 25);
+            chkCreateModels.TabIndex = 21;
+            chkCreateModels.Text = "Create Models";
+            chkCreateModels.UseVisualStyleBackColor = true;
+            // 
+            // chkCreateSelectSP
+            // 
+            chkCreateSelectSP.AutoSize = true;
+            chkCreateSelectSP.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            chkCreateSelectSP.Location = new Point(9, 16);
+            chkCreateSelectSP.Name = "chkCreateSelectSP";
+            chkCreateSelectSP.Size = new Size(141, 25);
+            chkCreateSelectSP.TabIndex = 15;
+            chkCreateSelectSP.Text = "Create Select SP";
+            chkCreateSelectSP.UseVisualStyleBackColor = true;
+            // 
+            // chkCreateDALs
+            // 
+            chkCreateDALs.AutoSize = true;
+            chkCreateDALs.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            chkCreateDALs.Location = new Point(359, 103);
+            chkCreateDALs.Name = "chkCreateDALs";
+            chkCreateDALs.Size = new Size(114, 25);
+            chkCreateDALs.TabIndex = 23;
+            chkCreateDALs.Text = "Create DALs";
+            chkCreateDALs.UseVisualStyleBackColor = true;
+            // 
+            // chkCreateDeleteSP
+            // 
+            chkCreateDeleteSP.AutoSize = true;
+            chkCreateDeleteSP.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            chkCreateDeleteSP.Location = new Point(179, 16);
+            chkCreateDeleteSP.Name = "chkCreateDeleteSP";
+            chkCreateDeleteSP.Size = new Size(144, 25);
+            chkCreateDeleteSP.TabIndex = 18;
+            chkCreateDeleteSP.Text = "Create Delete SP";
+            chkCreateDeleteSP.UseVisualStyleBackColor = true;
+            // 
+            // chkCreateServices
+            // 
+            chkCreateServices.AutoSize = true;
+            chkCreateServices.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            chkCreateServices.Location = new Point(9, 146);
+            chkCreateServices.Name = "chkCreateServices";
+            chkCreateServices.Size = new Size(135, 25);
+            chkCreateServices.TabIndex = 22;
+            chkCreateServices.Text = "Create Services";
+            chkCreateServices.UseVisualStyleBackColor = true;
+            // 
+            // chkCreateUpdateSP
+            // 
+            chkCreateUpdateSP.AutoSize = true;
+            chkCreateUpdateSP.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            chkCreateUpdateSP.Location = new Point(359, 16);
+            chkCreateUpdateSP.Name = "chkCreateUpdateSP";
+            chkCreateUpdateSP.Size = new Size(150, 25);
+            chkCreateUpdateSP.TabIndex = 17;
+            chkCreateUpdateSP.Text = "Create Update SP";
+            chkCreateUpdateSP.UseVisualStyleBackColor = true;
+            // 
+            // chkCreateInsertSP
+            // 
+            chkCreateInsertSP.AutoSize = true;
+            chkCreateInsertSP.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            chkCreateInsertSP.Location = new Point(9, 47);
+            chkCreateInsertSP.Name = "chkCreateInsertSP";
+            chkCreateInsertSP.Size = new Size(139, 25);
+            chkCreateInsertSP.TabIndex = 16;
+            chkCreateInsertSP.Text = "Create Insert SP";
+            chkCreateInsertSP.UseVisualStyleBackColor = true;
+            // 
+            // chkCreateControllers
+            // 
+            chkCreateControllers.AutoSize = true;
+            chkCreateControllers.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            chkCreateControllers.Location = new Point(9, 103);
+            chkCreateControllers.Name = "chkCreateControllers";
+            chkCreateControllers.Size = new Size(155, 25);
+            chkCreateControllers.TabIndex = 20;
+            chkCreateControllers.Text = "Create Controllers";
+            chkCreateControllers.UseVisualStyleBackColor = true;
             // 
             // chkCheckAll
             // 
@@ -148,43 +269,10 @@
             chkCheckAll.UseVisualStyleBackColor = true;
             chkCheckAll.CheckedChanged += chkCheckAll_CheckedChanged;
             // 
-            // chkCreateInsertSP
-            // 
-            chkCreateInsertSP.AutoSize = true;
-            chkCreateInsertSP.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            chkCreateInsertSP.Location = new Point(634, 148);
-            chkCreateInsertSP.Name = "chkCreateInsertSP";
-            chkCreateInsertSP.Size = new Size(139, 25);
-            chkCreateInsertSP.TabIndex = 16;
-            chkCreateInsertSP.Text = "Create Insert SP";
-            chkCreateInsertSP.UseVisualStyleBackColor = true;
-            // 
-            // chkCreateUpdateSP
-            // 
-            chkCreateUpdateSP.AutoSize = true;
-            chkCreateUpdateSP.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            chkCreateUpdateSP.Location = new Point(984, 117);
-            chkCreateUpdateSP.Name = "chkCreateUpdateSP";
-            chkCreateUpdateSP.Size = new Size(150, 25);
-            chkCreateUpdateSP.TabIndex = 17;
-            chkCreateUpdateSP.Text = "Create Update SP";
-            chkCreateUpdateSP.UseVisualStyleBackColor = true;
-            // 
-            // chkCreateDeleteSP
-            // 
-            chkCreateDeleteSP.AutoSize = true;
-            chkCreateDeleteSP.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            chkCreateDeleteSP.Location = new Point(804, 117);
-            chkCreateDeleteSP.Name = "chkCreateDeleteSP";
-            chkCreateDeleteSP.Size = new Size(144, 25);
-            chkCreateDeleteSP.TabIndex = 18;
-            chkCreateDeleteSP.Text = "Create Delete SP";
-            chkCreateDeleteSP.UseVisualStyleBackColor = true;
-            // 
             // btnGeneratorSPs
             // 
             btnGeneratorSPs.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnGeneratorSPs.Location = new Point(827, 220);
+            btnGeneratorSPs.Location = new Point(1020, 362);
             btnGeneratorSPs.Name = "btnGeneratorSPs";
             btnGeneratorSPs.Size = new Size(186, 29);
             btnGeneratorSPs.TabIndex = 10;
@@ -209,17 +297,6 @@
             label5.Size = new Size(157, 21);
             label5.TabIndex = 14;
             label5.Text = "Selected Folder Path :";
-            // 
-            // chkCreateSelectSP
-            // 
-            chkCreateSelectSP.AutoSize = true;
-            chkCreateSelectSP.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            chkCreateSelectSP.Location = new Point(634, 117);
-            chkCreateSelectSP.Name = "chkCreateSelectSP";
-            chkCreateSelectSP.Size = new Size(141, 25);
-            chkCreateSelectSP.TabIndex = 15;
-            chkCreateSelectSP.Text = "Create Select SP";
-            chkCreateSelectSP.UseVisualStyleBackColor = true;
             // 
             // txtSelectedPath
             // 
@@ -270,6 +347,17 @@
             btnConnect.UseVisualStyleBackColor = true;
             btnConnect.Click += btnConnect_Click;
             // 
+            // chkCreateProgramFile
+            // 
+            chkCreateProgramFile.AutoSize = true;
+            chkCreateProgramFile.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            chkCreateProgramFile.Location = new Point(179, 146);
+            chkCreateProgramFile.Name = "chkCreateProgramFile";
+            chkCreateProgramFile.Size = new Size(167, 25);
+            chkCreateProgramFile.TabIndex = 27;
+            chkCreateProgramFile.Text = "Create Program File";
+            chkCreateProgramFile.UseVisualStyleBackColor = true;
+            // 
             // FrmStoreProcedureGenerator
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -292,6 +380,8 @@
             Text = "Store Procedure Generator";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -320,5 +410,12 @@
         private CheckBox chkCreateDeleteSP;
         private CheckedListBox chkboxTableList;
         private CheckBox chkCheckAll;
+        private CheckBox chkCreateDALs;
+        private CheckBox chkCreateServices;
+        private CheckBox chkCreateModels;
+        private CheckBox chkCreateControllers;
+        private Panel panel2;
+        private Button btnSelectAllCheckboxes;
+        private CheckBox chkCreateProgramFile;
     }
 }
